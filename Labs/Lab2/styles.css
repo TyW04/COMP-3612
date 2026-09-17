@@ -1,0 +1,13 @@
+main {
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #9f2042;
+    text-align: center;
+}
+
+.hero {
+    display: block;
+    margin: auto;
+}
