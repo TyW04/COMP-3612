@@ -1,13 +1,52 @@
-main {
+html {
+    scrollbar-width: none;
+}
+
+body {
     background-color: #f9f9f9;
+    margin: 0em 4em;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+article {
+    background-color: white;
 }
 
 h1 {
     color: #9f2042;
+    font-family: "Roboto Slab";
+    font-size: 2rem;
+    margin: auto;
     text-align: center;
+    margin-bottom: 0px;
+}
+
+blockquote {
+    font-family: "Roboto Slab";
+    font-size: 1.25rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ececec;
+    padding: 25px;
+}
+
+p {
+    width: 90%;
+    margin-inline: auto;
+    text-align: left;
 }
 
 .hero {
+    width: 100%;
     display: block;
-    margin: auto;
+    margin: 2em auto 2em auto;
+}
+
+#details {
+    color: #a9a9ba;
+    font-size: 1.25rem;
+    text-align: center;
 }
