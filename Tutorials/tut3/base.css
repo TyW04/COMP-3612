@@ -1,0 +1,77 @@
+:root {
+    --paper: #FAF7F0;
+    --ink: #22221F;
+    --ink-soft: #55534C;
+    --accent: #2A6F77;
+    --accent-soft: #DCEBEA;
+    --line: #DAD4C4;
+    --card: #FFFFFF;
+    --code-bg: #F2EEE3;
+}
+
+body {
+  margin-left: 20px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;    
+    font-weight: 500;
+    line-height: 1.55;
+    padding: 5px;
+}
+
+header {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+}
+header h1 {
+    font-weight: 700;
+    font-size: 2.1rem;
+    margin: 0 0 10px;
+    color: var(--ink);
+}
+header p {
+    margin: 8px 0 0 0;
+    color: var(--ink-soft);
+    max-width: 90ch;
+    font-size: 0.98rem;
+    
+}
+
+  article.exercise {
+    margin-bottom: 56px;
+
+  }
+  .ex-head {
+    margin-bottom: 6px;
+  }
+  .ex-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+    display:inline-block;
+    margin-right: 5px;
+  }
+  .ex-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0px 0 8px;
+  }
+  .ex-task {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    margin: 0 0 16px;
+    max-width: 90ch;
+  }
+
+  section.demo {
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 24px;    
+    max-width: 120ch;
+    font-weight: 300;
+  }

@@ -1,0 +1,309 @@
+
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="base.css" />
+    <style>  
+        /* you may need to add additional selectors or modify these selectors for some of the exercises  */
+
+        .ex01 {
+            p {
+                font-family: "Times New Roman, serif";
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+        }
+
+        .ex02 { 
+            a:link {
+                color: rgb(255, 111, 40);
+            }
+            a:hover {
+                color: blue;
+            }
+        }
+
+        .ex03 {
+            background-color: #cdd3dd;
+            color: rgb(102, 51, 153);
+        }
+
+        .ex04 {
+            border: 1px solid lightslategray;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .ex05 { 
+            img {
+                display: block;
+            }
+        }
+
+        .ex06 {
+            span {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+
+        .ex07 {
+            p {
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+                border-radius: 10px;
+                padding: 10px;
+            }
+        }
+
+        .ex08 {
+            button {
+                background-color: #F2EEE3;
+                font-size: 1em;
+                border: 3px solid #2A6F77;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            button:hover {
+                background-color: rgba(126, 123, 118, 0.7);
+                cursor: pointer;
+            }
+        }
+
+        .ex09 {
+            ul {
+                list-style: none;
+                padding-left: 0;
+            }
+
+        }
+
+        .ex10 {
+            ul {
+                list-style: none;
+                padding-left: 0;
+                li {
+                    display: inline;
+                }
+                :hover {
+                    color: rgb(255, 111, 40);
+                }
+            }
+        }
+        .ex11 {
+            .card {
+                display: inline-block;
+                width: 20%;
+                align-items: baseline;
+                padding: 0.75rem;
+                margin: 1rem; 
+                width: 20rem;
+                border: 1px solid silver;
+            }
+
+            .card button {
+                height: 3rem;
+                width: 15rem;
+            }
+
+            .card h2 {
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>3612 Tutorial 3: CSS Practice</h1>
+    <p>Eleven small exercises for core CSS: color, type, borders, spacing, shadows, backgrounds, hover states, and lists. No positioning, floats, flexbox, or grid — just the fundamentals.</p>
+    <p>The test markup for these exercises is contained within the &lt;section&gt; elements with class="demo". You will also see a &lt;div&gt; element with class="ex01/ex02/etc". You will modify these ex## classes.</p>
+</header>        
+
+<article class="exercise"  >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">01</span>Typography</div>
+    </div>
+    <p class="ex-task">Change the typography styles for the provided paragraph for this exercise: font-family to “Times New Roman, serif”, font-size to 1.5em, and font-weight to bold</p>
+    
+    <section class="demo">
+        <div class="ex01">
+            <p>But, if constructing the future and settling everything for all times are not our affair, it is all the more clear what we have to accomplish at present: I am referring to ruthless criticism of all that exists, ruthless both in the sense of not being afraid of the results it arrives at and in the sense of being just as little afraid of conflict with the powers that be.</p>
+        </div>
+    </section>   
+</article>
+
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">02</span>Pseudo-Selectors</div>
+    </div>
+    <p class="ex-task">For the provided link, change the link color.</p>
+    
+    <section class="demo">
+        <div class="ex02">
+            <a href="#">Sample link</a>
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">03</span>Colors</div>
+    </div>
+    <p class="ex-task">Change the provided div so that the background color is #cdd3dd and the text color is 102 red, 51 green, 153 blue.</p>
+    
+    <section class="demo">
+        <div class="ex03">
+            <div>
+                A commodity appears, at first sight, a very trivial thing, and easily understood. Its analysis shows that it is, in reality, a very queer thing, abounding in metaphysical subtleties and theological niceties.
+            </div>
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">04</span>Borders</div>
+    </div>
+    <p class="ex-task">Add borders for the provided div: 1px wide, solid, and with a color of lightslategray. Round its corner using border-radius. Add padding of 10px.</p>
+    
+    <section class="demo">
+        <div class="ex04">
+            Think you're escaping and run into yourself. Longest way round is the shortest way home.
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">05</span>CSS Display</div>
+    </div>
+    <p class="ex-task">The three images in the provided div are on the same line since images are inline elements. Use the display property so that these images are on separate lines</p>
+    
+    <section class="demo">
+        <div class="ex05">
+            <img src="images/015120.jpg" alt="">
+            <img src="images/013010.jpg" alt="">
+            <img src="images/001150.jpg" alt="">
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">06</span>CSS Display</div>
+    </div>
+    <p class="ex-task">The three span elements in the provided div are right next to one another. Use the display property and margin properties so that there is space between the divs</p>
+    
+    <section class="demo">
+        <div class="ex06">
+            <span>One</span><span>Two</span><span>Three</span>
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">07</span>Box Shadow</div>
+    </div>
+    <p class="ex-task">For the provided p, add a soft drop shadow with box-shadow. Its syntax is x-offset y-offset blur-radius color, e.g. 0 4px 12px rgba(0,0,0,0.2). Also add some padding.</p>
+    
+    <section class="demo">
+        <div class="ex07">
+            <p>People know what they do; frequently they know why they do what they do; but what they don't know is what what they do does.</p>
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">08</span>Button Styling</div>
+    </div>
+    <p class="ex-task">For the provided button, change the background color, the font size and color, the height, and add rounded corners. Use the :hover pseudo selector to change the font color and the cursor property to pointer when the mouse hovers over the button.</p>
+    
+    <section class="demo">
+        <div class="ex08">
+            <button>Button Text</button>
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">09</span>List Styling</div>
+    </div>
+    <p class="ex-task">For the provided unordered list, remove the default bullets (use list-syle) and indentation. Add some margin space between the elements</p>
+    
+    <section class="demo">
+        <div class="ex09">
+            <ul>
+                <li>first item</li>
+                <li>another item</li>
+                <li>yet another item</li>
+            </ul>
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">10</span>List Styling</div>
+    </div>
+    <p class="ex-task">For the provided unordered list, turn it into a horizontal navigation bar: that is, all the items on one line, padding, and a hover background color.</p>
+    
+    <section class="demo">
+        <div class="ex10">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+    </section>   
+</article>
+
+<article class="exercise" >
+    <div class="ex-head">      
+      <div class="ex-title"><span class="ex-num">11</span>Styling a Card</div>
+    </div>
+    <p class="ex-task">For the provided card divs (a card typically refers to a box containing an image and some text and/or buttons), use the display property to keep the cards on the same line. Add margin spacing of 1rem between the cards, a silver border to the card, and a width of 20rem. Add padding of 0.75rem to the card so that the content inside the content has some breathing space. Style the card button so that it is 3rem high and 15rem wide. Style the h2 tag with a font-size of 1.3rem and a font-weight of 500. If we wanted to center the items within the card, you would need to make use of flex or grid display (not covered in this tutorial).</p>
+    
+    <section class="demo">
+        <div class="ex11">
+            <div class="card">
+                <img src="images/001150.jpg" alt="">
+                <h2>Portrait of Gertrude Stein</h2>
+                <p>An oil-on-canvas painting of the American writer and art collector Gertrude Stein by Pablo Picasso, painted between 1905-6.</p>
+                <button>View</button>
+            </div>
+            <div class="card">
+                <img src="images/015120.jpg" alt="">
+                <h2>The Ballet Class</h2>
+                <p>An oil painting on canvas created between 1874 and 1876 by the French artist Edgar Degas.</p>
+                <button>View</button>
+            </div>
+            <div class="card">
+                <img src="images/013010.jpg" alt="">
+                <h2>Symphony in White, No. 1</h2>
+                <p>A painting of Joanna Hiffernan by James McNeill Whistler created in the winter of 1861–62.</p>
+                <button>View</button>
+            </div>
+            <div class="card">
+                <img src="images/015120.jpg" alt="">
+                <h2>The Ballet Class</h2>
+                <p>An oil painting on canvas created between 1874 and 1876 by the French artist Edgar Degas.</p>
+                <button>View</button>
+            </div>                        
+        </div>
+    </section>   
+</article>
+        
+</body>
+</html>
