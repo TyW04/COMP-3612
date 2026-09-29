@@ -1,12 +1,25 @@
+:root {
+    --gold-color: #d6a419;
+    --header-bg: #171b26;
+    --blue-button-hover: #34495e;
+}
+
+body {
+    margin: 0;
+}
+
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
+    background-color: var(--header-bg);
+    color: white;
+    padding: 0.5rem 1.75rem 0.5rem 1.75rem;
 
-    #title {
-        :first-child {
-            color: gold;
+    #title-container {
+        #slashes {
+            color: var(--gold-color);
         }
 
         p {
@@ -15,14 +28,30 @@ header {
         }
     }
 
-    #header-nav {
+    #header-nav-container {
         ul li {
             list-style: none;
             display: inline;
+            font-size: 1rem;
         }
 
         a {
-            text-decoration: none;;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 0.3rem;
+        }
+
+        a:hover {
+            background-color: #34495e;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: var(--gold-color);
+            box-shadow: 3px 3px 3px var(--gold-color);
+            transition:
+                color 0.35s,
+                box-shadow 0.35s,
+                padding 0.35s;
         }
     }
 }
