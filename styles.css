@@ -1,11 +1,8 @@
 :root {
     --gold-color: #d6a419;
-    --header-bg: #171b26;
+    --header-footer-bg: #171b26;
     --blue-button-hover: #34495e;
-}
-
-body {
-    margin: 0;
+    --light-text-color: #7e8894;
 }
 
 header {
@@ -13,7 +10,7 @@ header {
     align-items: center;
     justify-content: space-between;
     font-family: monospace;
-    background-color: var(--header-bg);
+    background-color: var(--header-footer-bg);
     color: white;
     padding: 0.5rem 1.75rem 0.5rem 1.75rem;
 
@@ -53,5 +50,40 @@ header {
                 box-shadow 0.35s,
                 padding 0.35s;
         }
+    }
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    background-color: var(--header-footer-bg);
+    color: var(--light-text-color);
+    padding: 3rem 1rem 0rem 1rem;
+    font-family: sans-serif;
+
+    hr {
+        /* This was from https://stackoverflow.com/questions/44401674/how-to-create-a-css-grid-layout-box-that-spans-2-columns-and-2-rows and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-column which shows grid-column: 1/3 (indicating span from grid column line 1 to 3, so I replicated that after looking up the grid-column: property on Mozilla docs and learning about negative values */
+        grid-column: 1 / -1;
+        width: 100%;
+        border-color: var(--light-text-color);
+        text-align: center;
+    }
+
+    .footer-div {
+        color: white;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+
+    #copyright {
+        font-size: 0.9em;
     }
 }
