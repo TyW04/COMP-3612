@@ -3,6 +3,31 @@
     --header-footer-bg: #171b26;
     --blue-button-hover: #34495e;
     --light-text-color: #7e8894;
+    --footer-list-color: #bfc4ce;
+    --hero-bg-color: #272d3f;
+}
+
+/* GLOBAL STYLES */
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto auto 1fr auto;
+    margin: 0;
+}
+
+main {
+    background-color: white;
+}
+
+
+ul li {
+    list-style: none;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: var(--gold-color);
+    text-shadow: 0px 0px 5px var(--gold-color);
 }
 
 header {
@@ -25,39 +50,38 @@ header {
         }
     }
 
+    li {
+        display: inline;
+    }
+
     #header-nav-container {
-        ul li {
-            list-style: none;
-            display: inline;
-            font-size: 1rem;
-        }
+        
 
         a {
             text-decoration: none;
             color: white;
+            font-size: 0.9em;
             padding: 10px;
             border-radius: 0.3rem;
         }
 
         a:hover {
             background-color: #34495e;
-            padding-left: 20px;
-            padding-right: 20px;
+            /* For some reason the global style doesn't change this? 
+            Have to manually set the color here*/
             color: var(--gold-color);
-            box-shadow: 3px 3px 3px var(--gold-color);
+            transition:
+                color 0.35s,
+                background-color 0.35s;
+            /*box-shadow: 3px 3px 3px var(--gold-color);
             transition:
                 color 0.35s,
                 box-shadow 0.35s,
                 padding 0.35s;
+            padding-left: 20px;
+            padding-right: 20px;*/
         }
     }
-}
-
-body {
-    display: grid;
-    height: 100vh;
-    grid-template-rows: auto 1fr auto;
-    margin: 0;
 }
 
 footer {
@@ -66,11 +90,15 @@ footer {
     grid-template-rows: 1fr auto;
     background-color: var(--header-footer-bg);
     color: var(--light-text-color);
-    padding: 3rem 1rem 0rem 1rem;
+    padding: 3rem 2rem 0rem 2rem;
     font-family: sans-serif;
 
     hr {
-        /* This was from https://stackoverflow.com/questions/44401674/how-to-create-a-css-grid-layout-box-that-spans-2-columns-and-2-rows and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-column which shows grid-column: 1/3 (indicating span from grid column line 1 to 3, so I replicated that after looking up the grid-column: property on Mozilla docs and learning about negative values */
+        /* This was from https://stackoverflow.com/questions/44401674/how-to-create-a-css-grid-layout-box-that-spans-2-columns-and-2-rows 
+        and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-column 
+        which shows grid-column: 1/3 (indicating span from grid column line
+        1 to 3, so I replicated that after looking up the grid-column: property 
+        on Mozilla docs and learning about negative values */
         grid-column: 1 / -1;
         width: 100%;
         border-color: var(--light-text-color);
@@ -79,11 +107,68 @@ footer {
 
     .footer-div {
         color: white;
+        margin-bottom: 2em;
+    }
+
+    .p-title {
         font-weight: bold;
-        margin-bottom: 2rem;
     }
 
     #copyright {
         font-size: 0.9em;
     }
+
+    ul {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    li {
+        color: var(--footer-list-color);
+        margin-bottom: 1em;
+    }
+
+    a {
+        color: var(--footer-list-color);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 }
+
+#hero {
+    display: grid;
+    background-color: var(--hero-bg-color);
+    color: white;
+    padding-top: 6em;
+    padding-bottom: 4em;
+    h1 {
+        font-family: Georgia, serif;
+        font-weight: 100;
+        text-align: left;
+    }
+
+    #hero-content {
+        width: 25%;
+        grid-column: 2 / 5;
+    }
+
+    button {
+        width: 10em;
+        height: 3em;
+        color: var(--hero-bg-color);
+        font-size: 0.9em;
+        background-color: var(--gold-color);
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:active {
+        border: 4px solid var(--hero-bg-color);
+        background-color: #af8614;
+        transition: 0.05s;
+    }
+}
+
