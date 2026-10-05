@@ -17,8 +17,8 @@ body {
 
 main {
     background-color: white;
+    padding-left: 2rem;
 }
-
 
 ul li {
     list-style: none;
@@ -30,6 +30,14 @@ a:hover {
     text-shadow: 0px 0px 5px var(--gold-color);
 }
 
+button:hover {
+    transform: scale(1.06);
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
 header {
     display: flex;
     align-items: center;
@@ -39,8 +47,8 @@ header {
     color: white;
     padding: 0.5rem 1.75rem 0.5rem 1.75rem;
 
-    #title-container {
-        #slashes {
+    .title-container {
+        .slashes {
             color: var(--gold-color);
         }
 
@@ -54,7 +62,7 @@ header {
         display: inline;
     }
 
-    #header-nav-container {
+    .header-nav-container {
         
 
         a {
@@ -73,14 +81,72 @@ header {
             transition:
                 color 0.35s,
                 background-color 0.35s;
-            /*box-shadow: 3px 3px 3px var(--gold-color);
+            /* box-shadow: 3px 3px 3px var(--gold-color);
             transition:
                 color 0.35s,
                 box-shadow 0.35s,
                 padding 0.35s;
             padding-left: 20px;
-            padding-right: 20px;*/
+            padding-right: 20px; */
         }
+    }
+}
+
+.hero {
+    display: grid;
+    position: relative; /* Makes #hero the positioning context */
+    background-color: var(--hero-bg-color);
+    color: white;
+
+    h1 {
+        font-family: Georgia, serif;
+        font-weight: 100;
+        text-align: left;
+    }
+
+    .curly-braces {
+        position: absolute;        
+        right: 0;         
+        text-align: right;
+        white-space: nowrap;
+        font-size: 17em;
+        /* I feel like this is a janky fix to align the braces to the top but
+         * it works so it's gonna stay */
+        /* transform: translateY(-22%); EDIT THIS DOES NOT WORK IT BREAKS HEADER BUTTONS */
+        user-select: none;
+        opacity: 0.15;
+        right: -1rem;
+    }
+
+    .hero-content {
+        margin: 5em 0 4em 15em;
+        width: 30em;
+        width: 40%;
+    }
+
+    button {
+        width: 10em;
+        height: 3em;
+        color: var(--hero-bg-color);
+        font-size: 0.9em;
+        background-color: var(--gold-color);
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:active {
+        background-color: #af8614;
+        transition: background-color 0.05s;
+    }
+
+    button:hover {
+        box-shadow: 0px 0px 5px var(--gold-color);
+    }
+}
+
+.featured-products {
+    h1 {
+        font-size: 1.5em;
     }
 }
 
@@ -137,38 +203,3 @@ footer {
         text-decoration: underline;
     }
 }
-
-#hero {
-    display: grid;
-    background-color: var(--hero-bg-color);
-    color: white;
-    padding-top: 6em;
-    padding-bottom: 4em;
-    h1 {
-        font-family: Georgia, serif;
-        font-weight: 100;
-        text-align: left;
-    }
-
-    #hero-content {
-        width: 25%;
-        grid-column: 2 / 5;
-    }
-
-    button {
-        width: 10em;
-        height: 3em;
-        color: var(--hero-bg-color);
-        font-size: 0.9em;
-        background-color: var(--gold-color);
-        border: none;
-        border-radius: 5px;
-    }
-
-    button:active {
-        border: 4px solid var(--hero-bg-color);
-        background-color: #af8614;
-        transition: 0.05s;
-    }
-}
-
