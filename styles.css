@@ -15,11 +15,6 @@ body {
     margin: 0;
 }
 
-main {
-    background-color: white;
-    padding-left: 2rem;
-}
-
 ul li {
     list-style: none;
     font-size: 1rem;
@@ -63,8 +58,8 @@ header {
     }
 
     .header-nav-container {
-        
-
+        z-index: 999; /* Ensures this stays at the very top.
+        Had issues with .curly-braces class conflicting with the buttons */
         a {
             text-decoration: none;
             color: white;
@@ -100,26 +95,36 @@ header {
 
     h1 {
         font-family: Georgia, serif;
-        font-weight: 100;
+        font-weight: 500;
         text-align: left;
     }
 
+    /*
+    This curly braces section gave me a lot more grief than I initially thought.
+    A prompt I used to get here was "Help me match my CSS to the provided screenshot."
+    So I gave it the screenshot and this entire .hero class.
+    This yielded very poor results (prompt wasn't very good anyways). 
+    What I ended up doing is using a mix what my prompt output was and what I looked
+    up on the Mozilla CSS Docs. Understanding things like z-index, user-select, 
+    and position helped me get to this point. 
+    */
     .curly-braces {
-        position: absolute;        
-        right: 0;         
+        position: absolute;                 
         text-align: right;
         white-space: nowrap;
         font-size: 17em;
         /* I feel like this is a janky fix to align the braces to the top but
          * it works so it's gonna stay */
-        /* transform: translateY(-22%); EDIT THIS DOES NOT WORK IT BREAKS HEADER BUTTONS */
-        user-select: none;
+        transform: translateY(-22%);
+        z-index: 0; /* Below everything else */
         opacity: 0.15;
         right: -1rem;
+        user-select: none; /* Stop user from highlighting. Found on Mozilla
+        developer docs by searching "select" when trying to find a solution */
     }
 
     .hero-content {
-        margin: 5em 0 4em 15em;
+        margin: 5em 0 4em 18em;
         width: 30em;
         width: 40%;
     }
@@ -144,9 +149,104 @@ header {
     }
 }
 
-.featured-products {
+main {
+    background-color: rgb(245, 245, 245);
+    padding: 2rem 2rem 3rem 2rem;
+
     h1 {
         font-size: 1.5em;
+        margin-bottom: 2rem;
+    }
+
+    .featured-products {
+    
+        .product-grid {
+            display: grid;
+            /* auto size 4 columns so they are all even as the browser resizes 
+            I considered flexbox like with lab 3 but wanted to learn more about grid
+            manipulation.
+            After a quick Google: "autowrap grid columns css" I found this Stackoverflow forum: 
+            https://stackoverflow.com/questions/43129360/css-grid-wrapping */
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            row-gap: 1rem;
+
+            .card {
+                border: 1px solid lightgray;
+                border-radius: 5px;
+                margin: 0 auto;
+                height: 40vh;
+                display: grid;
+                justify-items: center;
+                min-width: 24%;
+
+                .decor-banner {
+                    width: 100%;
+                    background-color: #2f6f63;
+                    height: 3px;
+                    border-radius: 5px;
+                }
+
+                .card-img {
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        width: 80%;
+                        height: 80%;
+                    }
+                }
+
+                .card-info {
+                    background-color: white;
+                    padding-inline: 1rem;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+
+                    font-family: sans-serif;
+
+                    p {
+                        margin-top: 0.75rem;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .card-title {
+                        font-weight: 600;
+                        font-size:1em;
+                        margin-bottom: -0.5rem;
+                    }
+
+                    .card-price {
+                        font-size: 0.9em;
+                        color: gray;
+                    }
+
+                    a {
+                        border: 1px solid black;
+                        padding: 8px 50px;
+                        color: black;
+                        text-decoration: none;
+                        font-weight: 600;
+                        border-radius: 3px;
+                        font-size: 0.9em;
+                    }
+
+                    a:hover {
+                        background-color: black;
+                        color: white;
+                        text-shadow: none;
+                    }
+                }
+            }
+
+            .card:hover {
+                border-color: black;
+
+                .decor-banner {
+                    background-color: var(--gold-color);
+                    border-radius: 5px;
+                }
+            }
+        }
     }
 }
 
