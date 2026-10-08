@@ -96,6 +96,10 @@ header {
 .site-path {
     border-bottom: 2px solid var(--border-divider-color);
     padding-inline: 1.75rem;
+    p {
+        color: var(--hero-bg-color);
+        font-family: monospace;
+    }
 }
 
 .hero {
