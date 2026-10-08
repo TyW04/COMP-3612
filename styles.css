@@ -5,6 +5,11 @@
     --light-text-color: #7e8894;
     --footer-list-color: #bfc4ce;
     --hero-bg-color: #272d3f;
+    --border-divider-color: #d7d7d7;
+}
+
+html {
+    scrollbar-width: none;
 }
 
 /* GLOBAL STYLES */
@@ -35,6 +40,7 @@ button:active {
 
 header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     font-family: monospace;
@@ -85,6 +91,11 @@ header {
             padding-right: 20px; */
         }
     }
+}
+
+.site-path {
+    border-bottom: 2px solid var(--border-divider-color);
+    padding-inline: 1.75rem;
 }
 
 .hero {
@@ -260,6 +271,7 @@ main {
         background-color: white;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        border-top: 2px solid var(--border-divider-color);
 
 
         h1 {
@@ -267,10 +279,11 @@ main {
         }
 
         p {
-            width: 40%;
+            width: 56%;
             font-size: 0.9rem;
             color: gray;
         }
+
     }   
 }
 
