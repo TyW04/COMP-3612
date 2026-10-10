@@ -17,7 +17,7 @@
                 <li><a href="#">Shop</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a href="#">Cart (0)</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +28,78 @@
         </p>
     </section>
 
-    <main>
+    <main class="product-page">
+        <section class="product-overview">
+            <!-- Column 1 -->
+            <div class="product-images">
+                <img class="main-img" src="images/003-medium-front.png" alt="Front picture of sweater"/>
+                <div class="additional-imgs">
+                    <img class="secondary-img" src="images/003-thumb-back.png" alt="Back picture of sweater"/>
+                    <img class="secondary-img" src="images/003-thumb-back-angle.png" alt="Back angled picture of sweater"/>
+                    <img class="secondary-img" src="images/003-thumb-front-angle.png" alt="Front angled picture of sweater"/>
+                </div>
+            </div>
+            <!-- Column 2 -->
+             <section class="product-info">
+                <h1>Merino Wool Cable Knit Sweater</h1>
+                <p id="stars">&#9733;&#9733;&#9733;&#9733;&#9733; (4.8/5) - 127 Reviews</p>
+                <p id="price">$199.99</p>
+                <p class="text-description">This luxurious cable knit sweater is made from 100% merino wool for exceptional warmth and softness. The classic cable pattern adds timeless texture and visual interest to this versatile piece. Natural temperature regulation properties make it perfect for transitional seasons.</p>
+                <form method="post" action="https://www.randyconnolly.com/tests/process.php">
+                    <fieldset>
+                        <legend>Size:</legend>
+                        <div class="size-radios">
+                            <input type="radio" name="size" id="size-xs" value="XS">
+                            <label for="size-xs">XS</label>
+
+                            <input type="radio" name="size" id="size-s" value="S">
+                            <label for="size-s">S</label>
+                            
+                            <input type="radio" name="size" id="size-m" value="M">
+                            <label for="size-m">M</label>
+                            
+                            <input type="radio" name="size" id="size-l" value="L">
+                            <label for="size-l">L</label>
+                            
+                            <input type="radio" name="size" id="size-xl" value="XL">
+                            <label for="size-xl">XL</label>
+                            
+                            <input type="radio" name="size" id="size-xxl" value="XXL">
+                            <label for="size-xxl">XXL</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Color:</legend>
+                        <div class="color-swatch-radios">
+                            <input type="radio" name="colour" id="colour-cream">
+                            <label for="colour-cream" id="colour-cream"></label>
+
+                            <input type="radio" name="colour" id="colour-gray">
+                            <label for="colour-gray" id="colour-gray"></label>
+                            
+                            <input type="radio" name="colour" id="colour-blue">
+                            <label for="colour-blue" id="colour-blue"></label>
+                            
+                            <input type="radio" name="colour" id="colour-rust">
+                            <label for="colour-rust" id="colour-rust"></label>
+                            
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="quantity-input">
+                        <legend>Quantity:</legend>
+                        <input type="number" name="quantity" id="quantity" min="1" max="99">
+                    </fieldset>
+
+                    <input class="form-button" type="submit" value="Add to Cart"/>
+                    <input class="form-button" type="button" value="Add to Wishlist"/>
+                </form>
+             </section>
+
+        </section>
+        <section class="product-description"></section>
+        <section class="product-reviews"></section>
     </main>
 
     <footer>

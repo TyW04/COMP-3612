@@ -6,6 +6,7 @@
     --footer-list-color: #bfc4ce;
     --hero-bg-color: #272d3f;
     --border-divider-color: #d7d7d7;
+    --bg-color: #f5f5f5;
 }
 
 html {
@@ -15,7 +16,7 @@ html {
 /* GLOBAL STYLES */
 body {
     display: grid;
-    height: 100vh;
+    min-height: 100vh; /* Make sure we use the entire viewport */
     grid-template-rows: auto auto 1fr auto;
     margin: 0;
 }
@@ -93,20 +94,12 @@ header {
     }
 }
 
-.site-path {
-    border-bottom: 2px solid var(--border-divider-color);
-    padding-inline: 1.75rem;
-    p {
-        color: var(--hero-bg-color);
-        font-family: monospace;
-    }
-}
-
 .hero {
     display: grid;
     position: relative; /* Makes #hero the positioning context */
     background-color: var(--hero-bg-color);
     color: white;
+    overflow: hidden;
 
     h1 {
         font-family: Georgia, serif;
@@ -124,16 +117,16 @@ header {
     and position helped me get to this point. 
     */
     .curly-braces {
-        position: absolute;                 
+        position: absolute;
+        top: 0;                 
+        right: -1rem;
         text-align: right;
         white-space: nowrap;
         font-size: 17em;
-        /* I feel like this is a janky fix to align the braces to the top but
-         * it works so it's gonna stay */
-        transform: translateY(-22%);
+        line-height: 1;
+        transform: translateY(-0.14em);
         z-index: 0; /* Below everything else */
         opacity: 0.15;
-        right: -1rem;
         user-select: none; /* Stop user from highlighting. Found on Mozilla
         developer docs by searching "select" when trying to find a solution */
     }
@@ -165,9 +158,8 @@ header {
 }
 
 main {
-    background-color: rgb(245, 245, 245);
+    background-color: var(--bg-color);
     padding: 2rem 2rem 0rem 0rem;
-    width: 100%;
 
     h1, p {
         font-size: 1.5em;
@@ -284,7 +276,7 @@ main {
 
         p {
             width: 56%;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: gray;
         }
 
@@ -342,5 +334,222 @@ footer {
 
     a:hover {
         text-decoration: underline;
+    }
+}
+
+/* PRODUCT HTML */
+.site-path {
+    border-bottom: 2px solid var(--border-divider-color);
+    padding-inline: 1.75rem;
+    
+    p {
+        color: var(--hero-bg-color);
+        font-family: monospace;
+    }
+}
+
+main.product-page {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    padding: 3rem 4rem 2rem 4rem;
+
+    .product-overview {
+        margin: 0 auto;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+        align-items: start; /* This allows both columns to have different heights without stretching */
+
+        .product-images {            
+            .main-img {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin-bottom: 0.5rem;
+            }
+
+            .additional-imgs {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+
+                img {
+                    display: block;
+                    width: 100%; /* take up entire parent column since it applies to all 3 images*/
+                }
+            }
+        }
+
+        .product-info {
+            font-family: sans-serif;
+            h1 {
+                font-weight: 500;
+                width: 40%;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            p {
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+            }
+
+            .text-description {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            form {
+                margin: 2em 2em 2em 1em;
+
+                fieldset {
+                    border: none;
+                }
+
+                legend {
+                    font-weight: bold;
+                    font-size: 0.9em;
+                }
+
+                .form-button {
+                    margin-left: 1.2em;
+                    font-weight: bold;
+                    padding: 1em 1.5em;
+                    border-radius: 4px;
+                    background-color: var(--bg-color);
+                }
+
+                .form-button:hover {
+                    transform: scale(1.06);
+                }
+
+                .form-button:active {
+                    transform: scale(0.99);
+                }
+
+                .size-radios {
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+
+                    /* Create the square buttons */
+                    label {
+                        display: inline-block;
+                        width: 2.5rem;
+                        border: 2px solid var(--border-divider-color);
+                        border-radius: 3px;
+                        padding: 0.7rem 0;
+                        text-align: center;
+                        font-size: 1rem;
+                        font-family: monospace;
+                        margin-inline: 0.1rem;
+                    }
+
+                    label:hover {
+                        background-color: var(--border-divider-color); 
+                        border-color: var(--gold-color);
+                    }
+
+                    /* I had to look this up. Googled "Custom CSS radio button change label colour
+                    when checked" and the Gemini AI result gave me the CSS selector below. */
+                    input:checked + label {
+                        background-color: var(--border-divider-color);
+                        border-color: black;
+                    }
+                }
+
+                .color-swatch-radios {
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    gap: 2rem;
+
+                    label {
+                        display: inline-block;
+                        border-radius: 100%;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        padding: 0;
+                        border: 1px solid var(--border-divider-color);
+                        margin-inline: 0.1rem;
+                    }
+
+                    input:checked + label {
+                        border-color: black;
+                        transform: scale(1.1);
+                        transition: transform 0.1s;
+                    }
+
+                    #colour-cream {
+                        background-color: #f8eed3;        
+                    }
+
+                    #colour-gray {
+                        background-color: gray;
+                    }
+
+                    #colour-blue {
+                        background-color: #181744;
+                    }
+
+                    #colour-rust {
+                        background-color: #B7410E;
+                    }
+                }
+
+                .quantity-input {
+                    input {
+                        width: 6rem;
+                        height: 2rem;
+                        /* This is from here: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
+                        appearance: textfield;
+                        border-radius: 3px;
+                        border: 2px solid var(--border-divider-color);
+                        margin: 1rem 0;
+                    }
+                }
+                
+                input[type="radio"] {
+                    /* Now the labels "don't exist" and radios will sit overtop of them 
+                    I found this here https://stackoverflow.com/questions/45259139/how-to-put-text-inside-radio-button
+                    and saw the person was using position: absolute on the <span> element inside the label */
+                    position: absolute;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                
+                input[type="submit"] {
+                    background-color: var(--gold-color);
+                    border: 2px solid var(--gold-color);
+                }
+
+                input[type="button"] {
+                    border: 2px solid black;
+                }
+
+                input[type="button"]:hover {
+                    background-color: var(--border-divider-color);
+                }
+            }
+
+            #stars {
+                color: var(--gold-color);
+                font-size: 0.9rem;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+
+            #price {
+                font-weight: 500;
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .text-description {
+        color: gray;
+        margin-top: 1rem
     }
 }
