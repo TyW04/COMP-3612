@@ -2,11 +2,13 @@
     --gold-color: #d6a419;
     --header-footer-bg: #171b26;
     --blue-button-hover: #34495e;
-    --light-text-color: #7e8894;
+    --light-text-color: #777879;
     --footer-list-color: #bfc4ce;
     --hero-bg-color: #272d3f;
     --border-divider-color: #d7d7d7;
     --bg-color: #f5f5f5;
+    --bg-color2: #dfdfdf;
+    --card-border-color: #949494;
 }
 
 html {
@@ -133,7 +135,6 @@ header {
 
     .hero-content {
         margin: 5em 0 4em 18em;
-        width: 30em;
         width: 40%;
     }
 
@@ -188,7 +189,7 @@ main {
                 grid-template-rows: auto auto 1fr;
                 justify-items: center;
                 min-width: 24%;
-                overflow: hidden; /* This keeps the .decor-banner insie the card */
+                overflow: hidden; /* This keeps the .decor-banner inside the card */
 
                 .decor-banner {
                     width: 100%;
@@ -325,6 +326,7 @@ footer {
     li {
         color: var(--footer-list-color);
         margin-bottom: 1em;
+        font-size: 0.8rem;
     }
 
     a {
@@ -350,8 +352,7 @@ footer {
 
 main.product-page {
     display: grid;
-    grid-template-rows: auto auto auto;
-    padding: 3rem 4rem 2rem 4rem;
+    padding: 3rem 6rem 2rem 6rem;
 
     .product-overview {
         margin: 0 auto;
@@ -394,11 +395,6 @@ main.product-page {
                 margin-top: 0.5rem;
                 margin-bottom: 0.5rem;
                 font-size: 1rem;
-            }
-
-            .text-description {
-                margin-top: 1rem;
-                margin-bottom: 1rem;
             }
 
             form {
@@ -466,7 +462,7 @@ main.product-page {
 
                     label {
                         display: inline-block;
-                        border-radius: 100%;
+                        border-radius: 50%;
                         width: 1.5rem;
                         height: 1.5rem;
                         padding: 0;
@@ -480,19 +476,19 @@ main.product-page {
                         transition: transform 0.1s;
                     }
 
-                    #colour-cream {
+                    .swatch-cream {
                         background-color: #f8eed3;        
                     }
 
-                    #colour-gray {
+                    .swatch-gray {
                         background-color: gray;
                     }
 
-                    #colour-blue {
+                    .swatch-blue {
                         background-color: #181744;
                     }
 
-                    #colour-rust {
+                    .swatch-rust {
                         background-color: #B7410E;
                     }
                 }
@@ -551,5 +547,420 @@ main.product-page {
     .text-description {
         color: gray;
         margin-top: 1rem
+    }
+
+    .product-info-selector {
+        grid-row: 2;
+        padding-left: 0;
+        margin-left: 0;
+        display: flex;
+        margin-bottom: 0;
+        margin-top: 2rem;
+        background-color: var(--bg-color);
+        color: black;
+        border-top: 2px solid var(--border-divider-color);
+        border-bottom: 2px solid var(--border-divider-color);
+        padding-bottom: 0;
+        justify-content: left;
+        gap: 2rem;
+
+        h2 {
+            font-weight: normal;
+            font-family: sans-serif;
+            color: gray;
+            font-size: 1.1rem;
+            padding-bottom: 0;
+        }
+
+        #description-section {
+            text-decoration: var(--gold-color) underline;
+            text-underline-offset: 1.29rem;
+            color: black;
+        }
+    }
+
+    .product-description {
+        padding-left: 0;
+        margin-left: -2rem; /* Janky fix. Another thing I would like to refactor given the time */
+        margin-top: 1rem;
+        grid-row: 3;
+        width: 60%;
+        margin-bottom: 0;
+
+        h2 {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .text-description {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .key-features {
+        grid-row: 4; /* I don't really need to define these but it might be helpful 
+        for debugging */
+        margin-top: 0;
+
+        h3 {
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .specs-table {
+            font-family: monospace;
+            font-size: 0.9rem;
+            width: 60%;
+
+            th, td {
+                text-align: left;
+                padding: 0.8rem 0.6rem;
+                border-bottom: 1px solid var(--border-divider-color);
+            }
+
+            th {
+                width: 30%;
+                font-weight: normal;
+                color: gray;
+            }
+
+            .bottom-row {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .product-reviews {
+        margin-top: 1rem;
+        border-top: 2px solid var(--border-divider-color);
+        font-family: sans-serif;
+
+        h3 {
+            margin: 1.5rem 0 1rem;
+            font-family: serif;
+            font-size: 1.5rem;
+        }
+
+        .customer-review {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-divider-color);
+        }
+
+        .customer-review:last-child {
+            border-bottom: none;
+        }
+
+        .review-header {
+            background-color: var(--bg-color);
+            padding: 0;
+            margin-inline: 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin: 0 0 0.5rem;
+
+            p {
+                padding: 0;
+                color: black;
+                margin: 0;
+                font-size: 0.9rem;
+            }
+
+            .customer-name {
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+
+            .stars {
+                color: var(--gold-color);
+            }
+
+            .review-date {
+                margin-left: auto; /* pushes the date to the far right */
+                font-family: monospace;
+                font-size: 0.75rem;
+                color: gray;
+            }
+        }
+
+        .review-body {
+            margin: 0;
+            padding: 0;
+            max-width: 40rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+    }
+}
+
+.hero-about {
+    background-color: var(--hero-bg-color);
+    min-height: 11em;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+
+    .hero-content-about {
+        position: relative;
+        z-index: 1;
+        margin-inline: auto;
+        padding: 1rem;
+    }
+
+    .about-title {
+        color: white;
+        font-weight: normal;
+        text-align: left;
+    }
+
+    .about-subtitle {
+        font-family: sans-serif;
+        font-size: 0.9rem;
+        color: var(--light-text-color);
+        max-width: 40rem;
+        letter-spacing: 0.5px;
+    }
+
+    /*
+    Yeah this got mostly copy-pasted because I felt it would take too long to 
+    redo my other hero section. Given more time and with the experience now, 
+    I would like to approach this much differently. There are many instances
+    throughout the CSS process that I could have done a lot better. But, it looks
+    decent until you look at all the code, lol.
+    */
+    .curly-braces {
+        color: gray;
+        position: absolute;       
+        right: -1rem;
+        text-align: right;
+        white-space: nowrap;
+        font-size: 12em;
+        line-height: 1;
+        transform: translateY(-0.09em);
+        z-index: 0; /* Below everything else */
+        opacity: 0.15;
+        user-select: none; /* Stop user from highlighting. Found on Mozilla
+        developer docs by searching "select" when trying to find a solution */
+    }
+}
+
+main.about-page {
+    width: 100%;
+    padding: 0;
+
+    h2, h3 {
+        margin: 0;
+        font-style: normal;
+    }
+
+    section {
+        padding: 2.5rem 8rem;
+    }
+
+    h2 {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        color: var(--header-footer-bg);
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .our-story, .our-team, .get-in-touch {
+        /* Set the bg colour for every second row */
+        background-color: var(--bg-color2);
+    }
+
+    .our-story, .our-values, .our-team, .our-journey {
+        border-bottom: 2px solid var(--card-border-color);
+    }
+
+    .our-values, .our-journey {
+        text-align: center;
+    }
+
+    p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    /* Our Story (Row 1) styling */
+    .our-story {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+        gap: 4rem;
+        font-size: 0.9rem;
+
+        h2 {
+            margin-left: 10rem;
+        }
+
+        p {
+            width: 50%;
+            margin-left: auto;
+            margin-right: 4rem;
+            color: var(--light-text-color);
+        }
+    }
+
+    /* Our Values (Row 2) & Meet Our Team (Row 3) 3 card grid setup */
+    .card-grid {
+        display: grid;
+        /* Copied and slightly modified from how the homepage works.
+        A lot of what is in here is like that.  */
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 1rem;
+        text-align: left;
+        place-items: center;
+
+        .value-card {
+            padding: 2rem;
+            background-color: var(--bg-color2);
+            border: 1px solid var(--card-border-color);
+            border-radius: 5px;
+            font-size: 0.9rem;
+            width: 20rem;
+            height: 15rem;
+
+            h3 {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .value-icon {
+                display: inline-block;
+                padding: 0.5rem 0.8rem;
+                background-color: black;
+                color: var(--gold-color);
+                font-family: monospace;
+                border-radius: 5px;
+            }
+
+            .value-desc {
+                color: var(--light-text-color);
+                padding: 0;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+            }
+
+            #q-value {
+                color: var(--gold-color);
+            }
+            
+            #s-value {
+                color: rgb(3, 112, 39);
+            }
+
+            #i-value {
+                color: white;
+            }
+        }
+
+        .team-member {
+            gap: 1rem;
+            max-width: 300px;
+
+            .photo-placeholder {
+                background-color: transparent;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                
+                img {
+                    margin: 0 auto;
+                    width: 300px;
+                    height: 400px;
+                    border: 1px solid var(--card-border-color);
+                    border-radius: 5px;
+                    overflow: hidden;
+                }
+                
+                
+            }
+
+            p {
+                padding: 0;
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                font-family: sans-serif;
+            }
+
+            .role {
+                color: var(--gold-color);
+                font-family: monospace;
+                font-size: 1rem;
+            }
+
+            .role-desc {
+                width: 80%;
+            }
+        }
+    }
+
+    .our-team {
+        p {
+            padding: 0;
+            color: var(--light-text-color);
+            font-size: 1.2rem;
+            width: 50%;
+        }
+    }
+
+    .our-journey {
+
+        .timeline {
+            width: 30rem;
+            margin: 0 auto;
+            padding: 0;
+            text-align: left;
+
+            /* Unfortunately I could not figure out the round gold
+            list style as seen in the image */
+            li {
+                font-family: monospace;
+                margin-bottom: 1rem;
+                padding-left: 1rem;
+                border-left: 2px solid var(--light-text-color);
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        .when {
+            color: rgb(3, 112, 39);
+        }
+    }
+
+    .get-in-touch {
+
+        .contact-cards {
+            display: flex;
+            gap: 1.5rem;
+
+            .contact-card {
+                padding: 1rem;
+                background-color: white;
+                border: 1px solid var(--card-border-color);
+                font-size: 0.9rem;
+                border-radius: 5px;
+                padding-right: 4rem;
+            }
+
+            h3, address, p {
+                font-size: 0.9rem;
+            }
+
+            address, p {
+                padding: 0;
+                font-family: sans-serif;
+            }
+        }
     }
 }

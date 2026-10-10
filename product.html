@@ -72,18 +72,17 @@
                     <fieldset>
                         <legend>Color:</legend>
                         <div class="color-swatch-radios">
-                            <input type="radio" name="colour" id="colour-cream">
-                            <label for="colour-cream" id="colour-cream"></label>
+                            <input type="radio" name="colour" id="colour-cream" value="cream">
+                            <label for="colour-cream" class="swatch-cream"></label>
 
-                            <input type="radio" name="colour" id="colour-gray">
-                            <label for="colour-gray" id="colour-gray"></label>
+                            <input type="radio" name="colour" id="colour-gray" value="gray">
+                            <label for="colour-gray" class="swatch-gray"></label>
                             
-                            <input type="radio" name="colour" id="colour-blue">
-                            <label for="colour-blue" id="colour-blue"></label>
+                            <input type="radio" name="colour" id="colour-blue" value="blue">
+                            <label for="colour-blue" class="swatch-blue"></label>
                             
-                            <input type="radio" name="colour" id="colour-rust">
-                            <label for="colour-rust" id="colour-rust"></label>
-                            
+                            <input type="radio" name="colour" id="colour-rust" value="rust">
+                            <label for="colour-rust" class="swatch-rust"></label>
                         </div>
                     </fieldset>
 
@@ -98,8 +97,70 @@
              </section>
 
         </section>
-        <section class="product-description"></section>
-        <section class="product-reviews"></section>
+
+        <header class="product-info-selector">
+            <h2 id="description-section">Description</h2>
+            <h2>Specifications</h2>
+            <h2>Care Instructions</h2>
+        </header>
+
+        <section class="product-description">
+            <h2>Product Details</h1>
+            <p class="text-description">This luxurious cable knit sweater is made from 100% merino wool for exceptional warmth and softness. The classic cable pattern adds timeless texture and visual interest to this versatile piece. Natural temperature regulation properties make it perfect for transitional seasons.</p>
+        </section>
+
+        <section class="key-features">
+            <h3>Key Features:</h3>
+            <table class="specs-table">
+                <tbody>
+                    <tr>
+                        <th>Material</th>
+                        <td>100% premium merino wool</td>
+                    </tr>
+                    <tr>
+                        <th>Style</th>
+                        <td>Classic cable knit pattern</td>
+                    </tr>
+                    <tr>
+                        <th>Closures</th>
+                        <td>Ribbed cuffs and hem</td>
+                    </tr>
+                    <tr>
+                        <th class="bottom-row">Care</th>
+                        <td class="bottom-row">Dry clean recommended</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </section>
+
+        <section class="product-reviews">
+            <h3>Customer Reviews</h3>
+            <article class="customer-review">
+                <header class="review-header">
+                    <p class="customer-name">Maria C.</p>
+                    <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <time class="review-date" datetime="2025-03-10">March 10, 2025</time>
+                </header>
+                <p class="review-body">Absolutely stunning sweater! The merino wool is incredibly soft and the cable knit detail is beautiful. Worth the investment.</p>
+            </article>
+            <article class="customer-review">
+                <header class="review-header">
+                    <p class="customer-name">Robert H.</p>
+                    <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <time class="review-date" datetime="2025-03-10">March 5, 2025</time>
+                </header>
+                <p class="review-body">Bought this for our lead software engineer and she loves it. High quality construction and the wool feels luxurious. Fits true to size.</p>
+            </article>
+            <article class="customer-review">
+                <header class="review-header">
+                    <p class="customer-name">Nina F.</p>
+                    <p class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                    <time class="review-date" datetime="2025-03-10">February 28, 2025</time>
+                </header>
+                <p class="review-body">Beautiful sweater but requires dry cleaning which is inconvenient. The quality is excellent though and it's very warm.</p>
+            </article>
+        </section>
     </main>
 
     <footer>
