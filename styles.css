@@ -160,7 +160,7 @@ header {
 
 main {
     background-color: var(--bg-color);
-    padding: 2rem 2rem 0rem 0rem;
+    padding: 2rem 0rem 0rem 0rem;
 
     h1, p {
         font-size: 1.5em;
@@ -269,7 +269,6 @@ main {
         padding-top: 1rem;
         padding-bottom: 1rem;
         border-top: 2px solid var(--border-divider-color);
-
 
         h1 {
             margin-bottom: 1rem;
