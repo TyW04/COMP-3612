@@ -1,0 +1,86 @@
+
+<html>
+    <head>
+	<script>
+		/* -----  add your code for exercise 1 here ---- */
+		const movie1 = {
+		  title: "The Shawshank Redemption",
+		  runLength: 142,
+		  url: "https://www.imdb.com/title/tt0111161/",
+		  director: {
+		    name: "Frank Darabont",
+		    country: "USA"
+		  },
+		  ratings: [9, 10, 9, 8, 10, 9, 9, 10, 8, 9, 10, 9, 9, 8, 10, 9, 10, 9, 9, 10]
+		};
+
+		const movie2 = {
+		  title: "Parasite",
+		  runLength: 132,
+		  url: "https://www.imdb.com/title/tt6751668/",
+		  director: {
+		    name: "Bong Joon-ho",
+		    country: "South Korea"
+		  },
+		  ratings: [9, 8, 10, 9, 9, 8, 9, 10, 8, 9, 9, 10, 8, 9, 9, 8, 10, 9, 9, 8]
+		};
+
+		const movie3 = {
+		  title: "Spirited Away",
+		  runLength: 125,
+		  url: "https://www.imdb.com/title/tt0245429/",
+		  director: {
+		    name: "Hayao Miyazaki",
+		    country: "Japan"
+		  },
+		  ratings: [10, 9, 9, 8, 10, 9, 10, 9, 8, 9, 10, 9, 9, 10, 8, 9, 9, 10, 9, 8]
+		};
+
+		const movies = [movie1, movie2, movie3];
+
+		/* -----  add your code for exercise 2 here ---- */
+		for (movie in movies) {
+			console.log(`Title: ${movie.title}
+			\n\tDirector: ${movie.director.name}`);
+		}
+		
+		/* -----  add your code for exercise 3 here ---- */
+		function getMovieHREF(movie) {
+			let movieURL = movie.url;
+			let movieName = movie.name;
+			return `<a href=${movieURL}>${movieName}</a>`;
+		}
+		document.write(getMovieHREF(movies[0]));
+		
+		/* -----  add your code for exercise 4 here ---- */
+		function getAvgMovieRating(movie) {
+			let ratingSum = 0;
+			for(const rating of movie.ratings) {
+				ratingSum += rating;
+			}
+
+			return ratingSum / movie.ratings.length;
+		}
+		
+		/* -----  add your code for exercise 5 here ---- */
+		function getRatingData(movie, calcAvgRating) {
+			return {
+				"average rating": calcAvgRating(movie),
+				"number of ratings": movie.ratings.length
+			};
+		}
+		
+		
+		
+		
+	</script
+    </head>
+    <body>
+		<h1>Look in console (Control + Shift + J in Chrome) to see results</h1>
+		<script>
+	
+		
+		</script>       
+    </body>
+
+</html>
