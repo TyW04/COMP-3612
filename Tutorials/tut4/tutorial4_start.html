@@ -1,0 +1,109 @@
+
+<html>
+    <head>
+        <script>
+        /* you code goes here */
+ 
+        /* question 1 */
+        let num = prompt("Enter a number: ");
+        num = Number(num);
+        if (Number.isNaN(num)) {
+            alert("Not a number, buddy.");
+        }
+        console.clear();
+        /* question 2 */
+        let grade = prompt("Enter a number between 0 and 100: ");
+        grade = Number(grade);
+        if (Number.isNan(grade)) {
+            alert("Not a number, buddy.");
+        }
+
+        if (grade < 0 || grade > 100) {
+            alert("Out of bounds");
+        }
+
+        if (grade >= 85) {
+            console.log("A");
+        } else if (grade >= 70) {
+            console.log("B");
+        } else if (grade >= 60) {
+            console.log("C");
+        } else if (grade >= 50) {
+            console.log("D");
+        } else {
+            console.log("F");
+        }
+
+        console.clear();
+
+        /* question 3 */
+
+        let name = prompt("Enter a name: ");
+
+        grade1 = prompt("Enter a number between 0 and 100: ");
+        grade = Number(grade);
+        if (Number.isNan(grade)) {
+            alert("Not a number, buddy.");
+        }
+
+        if (grade < 0 || grade > 100) {
+            alert("Out of bounds");
+        }
+
+        if (grade >= 85) {
+            console.log("A");
+        } else if (grade >= 70) {
+            console.log("B");
+        } else if (grade >= 60) {
+            console.log("C");
+        } else if (grade >= 50) {
+            console.log("D");
+        } else {
+            console.log("F");
+        }
+
+        console.clear();
+
+        alert(`The grade of ${name} is ${grade}`);
+
+        /* question 4 */
+        let characters = prompt("Enter a string of characters: ");
+        let search_str = prompt("Enter a search string: ");
+
+        if (characers.includes(search_str)) {
+            alert(`The search string (${search_str}) is in characters: ${characters}`);
+        } else {
+            alert(`The search string (${search_str}) is not in characters: ${characters}`);
+        }
+
+        /* question 5 */
+        characters = prompt("Enter a string of characters: ");
+        for (let i = 0; i < characters.length; i++) {
+            
+        }
+
+        /* question 6 */
+
+
+
+        /* question 7 */
+
+
+
+        /* question 8 */
+
+
+
+        /* question 9 */
+
+
+        
+        </script>
+    </head>
+    <body>
+        <h1>Look in the JavaScript Console</h1>
+        <p>Chrome PC: Control + Shift + J, Mac: Command + Option + J</p>
+        <p>FireFox: PC: Control + Shift + K, Mac: Command + Option + K</p>
+
+    </body>
+</html>
