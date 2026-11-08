@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 9</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">   
+  <link rel="stylesheet" href="css/lab09a-test03.css">
+  <script src="js/lab09a-test03.js"></script> 
+</head>
+<body>
+<main class="container">
+  <div class="products-section">
+      <h1>Online Store</h1>            
+      <div class="products-grid" id="productsGrid">
+          <div class="product-card" >
+              <div class="product-image"><img src="images/posters/movie1.jpg" /></div>
+              <div class="product-name">Emma (2020)</div>
+              <div class="product-description">Based on the Austin novel, in 1800s England, a well-meaning but selfish young woman meddles in the love lives of her friends.</div>
+              <div class="product-price">$9.99</div>
+              <!-- Notice the data- properties on each button, you will use this info -->
+              <button class="add-to-cart-btn" data-id="1" data-name="Emma" data-price="9.99">Add to Cart</button>
+          </div>
+          <div class="product-card" >
+              <div class="product-image"><img src="images/posters/movie4.jpg" /></div>
+              <div class="product-name">The Seventh Seal (1958)</div>
+              <div class="product-description">Swedish knight Antonius Block returns home from the Crusades to find his country in the grips of the Black Death, he challenges Death to a chess match.</div>
+              <div class="product-price">$12.99</div>
+              <button class="add-to-cart-btn" data-id="4" data-name="The Seventh Seal" data-price="12.99">Add to Cart</button>
+          </div>
+          <div class="product-card" >
+              <div class="product-image"><img src="images/posters/movie2.jpg" /></div>
+              <div class="product-name">La Dolce Vita (1959)</div>
+              <div class="product-description">Episodic journey of journalist Marcello who struggles to find his place in the world, torn between the allure of Rome's elite social scene.</div>
+              <div class="product-price">$19.99</div>
+              <button class="add-to-cart-btn" data-id="2" data-name="La Dolce Vita" data-price="19.99">Add to Cart</button>
+          </div>
+          <div class="product-card" >
+              <div class="product-image"><img src="images/posters/movie3.jpg" /></div>
+              <div class="product-name">Parasite (2019)</div>
+              <div class="product-description">The unemployed Ki-taek family takes interest in the wealthy Parks until they get entangled in an unexpected incident.</div>
+              <div class="product-price">$24.99</div>
+              <button class="add-to-cart-btn" data-id="3" data-name="Parasite" data-price="24.99">Add to Cart</button>
+          </div>
+      </div>
+  </div>
+
+  <div class="cart-panel">
+      <div class="cart-header">
+          <h2>🛒 Cart</h2>
+          <div class="cart-count" id="cartCount">0</div>
+      </div>
+      
+      <div class="cart-items" id="cartItems">
+          <div class="empty-cart">Your cart is empty</div>
+
+<!--      Sample cart item structure using provided classes. You will generate 
+          this structure dynamically when user clicks Add to Cart button
+          <div class="cart-item">
+            <div class="item-info">
+              <p class="item-name">The Seventh Seal x 1</p>
+              <p class="item-price">$12.99</p>
+            </div>
+          </div>        -->   
+      </div>
+      
+      <div class="cart-total">
+          <div class="total-amount" id="totalAmount">$0.00</div>
+          <button class="checkout-btn" id="checkoutBtn" disabled>Checkout</button>
+      </div>
+  </div>
+</main>
+</body>
+</html>

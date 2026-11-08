@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>  
+    <title>Lab 9</title>    
+    <link rel="stylesheet" type="text/css" href="css/lab09a-test04.css" />
+    <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    
+   <script type="text/javascript" language="javascript" src="js/lab09a-test04.js"></script>
+</head>
+<body class="form-body">
+
+<main class="form-box">
+    <h1>Test Your Knowledge #4</h1>
+    <hr>
+
+    <form method="get" action="#" id="sampleForm">
+        <label class="icon" for="details"><i class="fa fa-file fa-fw"></i></label>
+        <input type="text" id="tdetails" placeholder="task details" /> 
+
+        <label class="icon" for="details"><i class="fa fa-calendar fa-fw"></i></label>
+        <input type="date" id="tdate" placeholder="task date" />         
+
+        <button id="addTask"><i class="fa fa-plus fa-fw"></i> Add Task</button> 
+
+      <div class="todo hidden">
+         <h2>To Do</h2>
+         <hr>
+         <table id="taskTable"></table>
+      </div>  
+      <aside class="hidden">
+         <button id="clearTable"><i class="fa fa-trash fa-fw"></i>Remove All</button>
+      </aside>      
+    </form>
+
+
+
+</main>
+       
+</body>
+</html>
